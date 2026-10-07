@@ -155,7 +155,7 @@ final class StreamWrapper
         return $resource;
     }
 
-    public function stream_open(string $path, string $mode, int $options, string &$opened_path = null): bool
+    public function stream_open(string $path, string $mode, int $options, ?string &$opened_path = null): bool
     {
         $options = stream_context_get_options($this->context);
         if (!isset($options[self::PROTOCOL]['stream'])) {
